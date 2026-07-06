@@ -11,7 +11,7 @@ export function Contact() {
     {
       icon: MapPin,
       label: t.contact.studio,
-      value: "Kadıköy, Moda Cd. No: 42, Istanbul",
+      value: "Muradiye Bostanı Sk. No: 8/A Türkali Mh. Beşiktaş, Istanbul, Turkey",
     },
     {
       icon: Phone,

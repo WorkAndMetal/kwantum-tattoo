@@ -87,7 +87,7 @@ const en = {
     studio: "Studio",
     phone: "Phone",
     email: "Email",
-    mapLabel: "Kadıköy · Istanbul",
+    mapLabel: "Beşiktaş · Istanbul",
   },
   footer: {
     tagline:
@@ -187,7 +187,7 @@ const tr: typeof en = {
     studio: "Stüdyo",
     phone: "Telefon",
     email: "E-posta",
-    mapLabel: "Kadıköy · İstanbul",
+    mapLabel: "Beşiktaş · İstanbul",
   },
   footer: {
     tagline:
