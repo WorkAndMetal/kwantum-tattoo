@@ -5,20 +5,20 @@ export default {
     extend: {
       colors: {
         ink: {
-          950: "#0a0a0b",
-          900: "#111113",
-          800: "#1a1a1d",
-          700: "#242428",
-          600: "#333338",
+          950: "rgb(var(--color-ink-950) / <alpha-value>)",
+          900: "rgb(var(--color-ink-900) / <alpha-value>)",
+          800: "rgb(var(--color-ink-800) / <alpha-value>)",
+          700: "rgb(var(--color-ink-700) / <alpha-value>)",
+          600: "rgb(var(--color-ink-600) / <alpha-value>)",
         },
         bone: {
-          DEFAULT: "#e8e4dc",
-          muted: "#a8a49c",
+          DEFAULT: "rgb(var(--color-bone) / <alpha-value>)",
+          muted: "rgb(var(--color-bone-muted) / <alpha-value>)",
         },
         crimson: {
-          DEFAULT: "#dc2637",
-          dark: "#a31424",
-          glow: "#ff3348",
+          DEFAULT: "rgb(var(--color-crimson) / <alpha-value>)",
+          dark: "rgb(var(--color-crimson-dark) / <alpha-value>)",
+          glow: "rgb(var(--color-crimson-glow) / <alpha-value>)",
         },
       },
       fontFamily: {

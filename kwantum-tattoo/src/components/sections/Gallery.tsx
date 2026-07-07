@@ -9,46 +9,55 @@ import { useLanguage } from "@/hooks/useLanguage";
 interface Work {
   id: number;
   style: string;
-  gradient: string;
+  imageUrl: string;
+  alt: string;
   span?: string;
 }
 
-/**
- * Mock portfolio pieces. Gradients act as art placeholders —
- * replace with real images in src/assets when available.
- */
 const works: Work[] = [
   {
     id: 1,
     style: "Blackwork",
-    gradient: "from-ink-700 via-crimson-dark/40 to-ink-950",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b6/Dom_Carter_Blackwork_Owl_Tattoo.jpg",
+    alt: "Blackwork tattoo reference",
     span: "md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
     style: "Fine Line",
-    gradient: "from-ink-800 via-ink-600 to-crimson-dark/30",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/48/Celtic_knot_tattoo.jpg",
+    alt: "Fine line tattoo reference",
   },
   {
     id: 3,
     style: "Geometric",
-    gradient: "from-crimson-dark/50 via-ink-800 to-ink-950",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/8/84/Dom_Carter_Geometric_Tattoo.jpg",
+    alt: "Geometric tattoo reference",
   },
   {
     id: 4,
     style: "Dotwork",
-    gradient: "from-ink-950 via-ink-700 to-ink-900",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/6/61/Tatouage_en_dotwork.jpg",
+    alt: "Dotwork tattoo reference",
   },
   {
     id: 5,
     style: "Surrealism",
-    gradient: "from-ink-800 via-crimson/20 to-ink-950",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2b/Phoenix_full_sleeve_tattoo_by_Maaika.jpg",
+    alt: "Surreal tattoo reference",
     span: "md:col-span-2",
   },
   {
     id: 6,
     style: "Neo-Traditional",
-    gradient: "from-crimson-dark/40 via-ink-900 to-ink-800",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/6/6e/Angel_Half_Sleeve_Black_and_White_Tattoo.jpg",
+    alt: "Neo-traditional tattoo reference",
   },
 ];
 
@@ -104,11 +113,11 @@ export function Gallery() {
                 w.span
               )}
             >
-              <div
-                className={cn(
-                  "absolute inset-0 bg-gradient-to-br transition-transform duration-700 group-hover:scale-110",
-                  w.gradient
-                )}
+              <img
+                src={w.imageUrl}
+                alt={w.alt}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-ink-950/30 group-hover:bg-ink-950/10 transition-colors duration-500" />
               <div className="absolute bottom-0 inset-x-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -141,12 +150,12 @@ export function Gallery() {
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-2xl aspect-[4/3] rounded-md overflow-hidden border border-ink-600"
             >
-              <div
-                className={cn(
-                  "absolute inset-0 bg-gradient-to-br",
-                  selected.gradient
-                )}
+              <img
+                src={selected.imageUrl}
+                alt={selected.alt}
+                className="absolute inset-0 h-full w-full object-cover"
               />
+              <div className="absolute inset-0 bg-ink-950/20" />
               <button
                 onClick={() => setSelected(null)}
                 aria-label="Close"

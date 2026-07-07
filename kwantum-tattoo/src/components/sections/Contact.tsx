@@ -50,11 +50,19 @@ export function Contact() {
           ))}
         </div>
 
-        {/* Stylized map placeholder */}
+        {/* Stylized interactive map */}
         <Reveal delay={0.2}>
           <div className="relative h-[320px] lg:h-[360px] rounded-md overflow-hidden border border-ink-700 bg-ink-900">
-            <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(232,228,220,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(232,228,220,0.06)_1px,transparent_1px)] bg-[size:32px_32px]" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+            <iframe
+              title="Kwantum Tattoo Studio Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6017.783913694719!2d28.996294070796964!3d41.04949175753618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7b679db133b%3A0xdfacae06c948b00d!2sKwantum%20Tattoo%20Garden!5e0!3m2!1str!2str!4v1783378637067!5m2!1str!2str"
+              className="absolute inset-0 h-full w-full"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+            <div className="pointer-events-none absolute inset-0 opacity-30 bg-[linear-gradient(rgba(232,228,220,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(232,228,220,0.06)_1px,transparent_1px)] bg-[size:32px_32px]" />
+            <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
               <span className="relative flex h-4 w-4 mb-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-crimson opacity-60" />
                 <span className="relative inline-flex rounded-full h-4 w-4 bg-crimson-glow" />

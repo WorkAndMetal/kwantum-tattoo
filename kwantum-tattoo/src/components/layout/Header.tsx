@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
+import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -22,7 +23,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
+        "site-header fixed top-0 inset-x-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-ink-950/85 backdrop-blur-md border-b border-ink-700 py-3"
           : "bg-transparent py-6"
@@ -30,10 +31,10 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-6 md:px-12 flex items-center justify-between">
         <a href="#home" className="group flex items-baseline gap-1">
-          <span className="font-display text-2xl font-bold tracking-wide text-bone">
+          <span className="header-brand-main font-display text-2xl font-bold tracking-wide text-bone">
             KWANTUM
           </span>
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-crimson-glow group-hover:text-bone transition-colors">
+          <span className="header-brand-sub font-mono text-xs uppercase tracking-[0.3em] text-crimson-glow group-hover:text-bone transition-colors">
             tattoo
           </span>
         </a>
@@ -44,11 +45,12 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="font-mono text-xs uppercase tracking-[0.25em] text-bone-muted hover:text-crimson-glow transition-colors duration-300"
+              className="header-link font-mono text-xs uppercase tracking-[0.25em] text-bone hover:text-crimson-glow transition-colors duration-300"
             >
               {l.label}
             </a>
           ))}
+          <ThemeSwitcher />
           <LanguageSwitcher />
           <a
             href="#booking"
@@ -60,9 +62,10 @@ export function Header() {
 
         {/* Mobile: switcher + toggle */}
         <div className="md:hidden flex items-center gap-3">
+          <ThemeSwitcher />
           <LanguageSwitcher />
           <button
-            className="text-bone p-2"
+            className="header-menu-btn text-bone p-2"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -86,7 +89,7 @@ export function Header() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="font-mono text-sm uppercase tracking-[0.25em] text-bone-muted hover:text-crimson-glow transition-colors"
+                  className="header-link font-mono text-sm uppercase tracking-[0.25em] text-bone hover:text-crimson-glow transition-colors"
                 >
                   {l.label}
                 </a>

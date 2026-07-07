@@ -17,7 +17,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
     >
       <Languages size={14} />
       <span className={lang === "en" ? "text-crimson-glow" : ""}>EN</span>
-      <span className="text-ink-600">/</span>
+      <span className="text-bone-muted">/</span>
       <span className={lang === "tr" ? "text-crimson-glow" : ""}>TR</span>
     </button>
   );

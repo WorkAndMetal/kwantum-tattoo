@@ -6,21 +6,24 @@ import { Appointment } from "@/components/sections/Appointment";
 import { Contact } from "@/components/sections/Contact";
 import { Marquee } from "@/components/shared/Marquee";
 import { LanguageProvider } from "@/hooks/useLanguage";
+import { ThemeProvider } from "@/hooks/useTheme";
 
 export default function App() {
   return (
     <LanguageProvider>
-      <div className="noise-overlay">
-        <Header />
-        <main>
-          <Hero />
-          <Marquee />
-          <Gallery />
-          <Appointment />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+      <ThemeProvider>
+        <div className="noise-overlay">
+          <Header />
+          <main>
+            <Hero />
+            <Marquee />
+            <Gallery />
+            <Appointment />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </ThemeProvider>
     </LanguageProvider>
   );
 }

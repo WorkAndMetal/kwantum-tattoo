@@ -7,6 +7,7 @@ const en = {
     booking: "Booking",
     contact: "Contact",
     bookNow: "Book Now",
+    themeToggle: "Toggle theme",
   },
   hero: {
     eyebrow: "Est. 2019 · Custom Tattoo Studio",
@@ -106,6 +107,7 @@ const tr: typeof en = {
     booking: "Randevu",
     contact: "İletişim",
     bookNow: "Randevu Al",
+    themeToggle: "Temayı değiştir",
   },
   hero: {
     eyebrow: "Kuruluş 2019 · Özel Dövme Stüdyosu",

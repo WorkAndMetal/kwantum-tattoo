@@ -8,17 +8,17 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
+      className="hero-section relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
     >
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-crimson/10 blur-[140px] animate-pulse-slow" />
+        <div className="hero-glow absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-crimson/10 blur-[140px] animate-pulse-slow" />
       </div>
 
       {/* Giant outline text backdrop */}
       <span
         aria-hidden
-        className="absolute select-none font-display font-bold text-outline text-[22vw] leading-none opacity-40 tracking-tighter"
+        className="hero-outline absolute select-none font-display font-bold text-outline text-[22vw] leading-none opacity-40 tracking-tighter"
       >
         INK
       </span>
@@ -28,7 +28,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-mono text-xs md:text-sm uppercase tracking-[0.5em] text-crimson-glow mb-6"
+          className="hero-eyebrow font-mono text-xs md:text-sm uppercase tracking-[0.5em] text-crimson-glow mb-6"
         >
           {t.hero.eyebrow}
         </motion.p>
@@ -41,7 +41,7 @@ export function Hero() {
         >
           KWANTUM
           <br />
-          <span className="italic font-normal text-crimson-glow">
+          <span className="hero-accent italic font-normal text-crimson-glow">
             {t.hero.titleAccent}
           </span>
         </motion.h1>
